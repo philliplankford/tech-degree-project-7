@@ -1,0 +1,33 @@
+.fb,
+.ig,
+.twitter {
+    border: solid 2px $col-form-borders;
+    border-radius: 15px;
+    background-color: lighten($col-form-borders, 15%);
+    padding: 15px;
+    display: grid; 
+    grid-template-columns: max-content;
+    grid-template-areas: 
+        'img name'
+        'img stat';
+}
+
+.inline-svg {
+    width: 50px;
+    height: 50px;
+}
+.social-name {
+    grid-area: name;
+    color: $col-primary;
+}
+
+.social-stat {
+    grid-area: stat;
+    font-size: 2em;
+    font-weight: 100;
+    color: darken($col-form-borders, 30%);
+}
+
+.social-img {
+    grid-area: img;
+}

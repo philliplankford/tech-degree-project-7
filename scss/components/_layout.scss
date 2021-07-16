@@ -1,0 +1,51 @@
+.dashboard {
+    max-width: 94%;
+    margin: 0 auto;
+}
+
+.main-grid { 
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+            "site-header"
+            "site-nav"
+            "site-main";
+}
+
+.site-header {
+    grid-area: site-header;
+    display: flex;
+    background-color: $col-primary;
+    align-items: center;
+    padding: 1rem;
+    .profile-img {
+        max-width: 50px;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: .9em;
+    }
+}
+
+.site-nav {
+    grid-area: site-nav;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    background-color: $col-secondary;
+}
+
+.site-main {
+    grid-area: site-main;
+}
+
+@media (min-width: $tablet-break) {
+
+}
+
+@media (min-width: $desktop-break) {
+
+}
