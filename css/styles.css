@@ -337,13 +337,6 @@ template {
   display: none;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-}
-
 h1 {
   font-weight: 200;
 }
@@ -359,8 +352,20 @@ h3 {
 }
 
 .svg {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
+  margin: 0 0.7rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
 }
 
 .dashboard {
@@ -371,31 +376,50 @@ h3 {
 .main-grid {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: auto;
+  grid-template-rows: 60px 70px 1fr;
   grid-template-areas: "site-header" "site-nav" "site-main";
 }
 
 .site-header {
   grid-area: site-header;
   display: flex;
+  justify-content: space-between;
   background-color: #7477bf;
+  color: #fff;
   align-items: center;
-  padding: 1rem;
+  padding: 0.6rem;
 }
 .site-header .profile-img {
   max-width: 50px;
 }
+.site-header .svg {
+  width: 25px;
+  height: 25px;
+}
 .site-header h1 {
   font-size: 1.5em;
+  margin-right: 1em;
 }
 .site-header p {
-  font-size: 0.9em;
+  font-size: 0.7em;
+  font-weight: 100;
+}
+
+.header-right {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+.header-right p {
+  align-items: center;
+  flex-basis: content;
 }
 
 .site-nav {
   grid-area: site-nav;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   padding: 0.5rem;
   background-color: #4d4c72;
 }
@@ -412,7 +436,7 @@ h3 {
 .traffic-nav li {
   color: #fff;
   background-color: #90ee90;
-  border-radius: 50%;
+  border-radius: 90px/90px;
   margin-right: 10px;
   padding: 10px;
 }
@@ -448,6 +472,27 @@ h3 {
 
 .social-img {
   grid-area: img;
+}
+
+@media (min-width: 768px) {
+  .main-grid {
+    grid-template-rows: 70px 75px 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  .main-grid {
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: "site-header site-header" "site-nav site-main";
+  }
+
+  .site-nav {
+    flex-direction: column;
+    justify-content: start;
+  }
+  .site-nav .svg {
+    margin: 1rem 0;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

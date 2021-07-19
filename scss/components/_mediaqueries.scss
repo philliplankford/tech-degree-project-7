@@ -1,0 +1,22 @@
+@media (min-width: $tablet-break) {
+    .main-grid {
+        grid-template-rows: 70px 75px 1fr;
+    }
+}
+
+@media (min-width: $desktop-break) {
+    .main-grid {
+        grid-template-columns: 80px 1fr;
+        grid-template-rows: 60px 1fr;
+        grid-template-areas: 
+        "site-header site-header"
+        "site-nav site-main";
+    }
+    .site-nav {
+        flex-direction: column;
+        justify-content: start;
+        .svg {
+            margin: 1rem 0;
+        }
+    }
+}

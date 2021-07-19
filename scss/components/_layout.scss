@@ -1,3 +1,15 @@
+* {
+    box-sizing: border-box;
+    padding: 0; 
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+
 .dashboard {
     max-width: 94%;
     margin: 0 auto;
@@ -6,7 +18,7 @@
 .main-grid { 
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: auto;
+    grid-template-rows: 60px 70px 1fr;
     grid-template-areas: 
             "site-header"
             "site-nav"
@@ -16,24 +28,44 @@
 .site-header {
     grid-area: site-header;
     display: flex;
+    justify-content: space-between;
     background-color: $col-primary;
+    color: $col-white;
     align-items: center;
-    padding: 1rem;
+    padding: .6rem;
     .profile-img {
         max-width: 50px;
     }
+    .svg {
+        width: 25px; 
+        height: 25px;
+    }
     h1 {
         font-size: 1.5em;
+        margin-right: 1em;
     }
     p {
-        font-size: .9em;
+        font-size: .7em; 
+        font-weight: 100;
     }
 }
+
+.header-right {
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: flex-end;
+    p {
+        align-items: center;
+        flex-basis: content;
+    }
+}
+
 
 .site-nav {
     grid-area: site-nav;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     padding: .5rem;
     background-color: $col-secondary;
 }
