@@ -99,6 +99,15 @@ section,
     }
 }
 
+.social-img {
+    background-color: $col-primary;
+    border: 7px solid $col-primary;
+    width: 67px;
+    height: 67px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
 form {
     input,
     textarea,
@@ -152,9 +161,6 @@ form {
     svg {
         margin-right: 10px;
         fill: $col-white;
-        background-color: $col-primary;
-        border: 15px solid $col-primary;
-        border-radius: 50%;
     }
 }
 
@@ -163,6 +169,23 @@ form {
     margin-top: 10px;
     p:last-child {
         margin-bottom: 10px;
+    }
+}
+
+.profile-toggle,
+.email-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    label {
+        flex: .7;
+        border: 2px solid #ccc;
+        border-radius: 90px/90px;
+    }
+    p {
+        font-weight: 100;
+        font-size: .7rem;
     }
 }
 @media (min-width: $tablet-break) {
