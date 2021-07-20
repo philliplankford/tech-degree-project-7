@@ -15,6 +15,7 @@
                         <img src="svgs/bell.svg" alt="bell" class="svg">
                         <div id="notifications"></div>
                     </div>
+                    <hr class="vert-line">
                     <img src="images/member-1.jpg" class="profile-img">
                     <p class="header-name">Student Name</p>
                 </div>
@@ -39,10 +40,10 @@
                     <section>
                         <h3>Traffic</h3>
                         <ul class="traffic-nav">
-                            <li class="traffic-nav-link">Hourly</li>
-                            <li class="traffic-nav-link">Daily</li>
-                            <li class="traffic-nav-link">Weekly</li>
-                            <li class="traffic-nav-link">Monthly</li>
+                            <li class="active">Hourly</li>
+                            <li>Daily</li>
+                            <li>Weekly</li>
+                            <li>Monthly</li>
                         </ul>
                         <div class="chart-full-container">
                             <canvas id="traffic-chart"></canvas>
@@ -115,7 +116,7 @@
                         </form>
                     </section>
                     <hr />
-                    <section>
+                    <section class="settings">
                         <h3>Settings</h3>
 
                         <!-- two toggle buttons here-->
@@ -128,7 +129,7 @@
                         </select>
 
                         <div class="settings-buttons">
-                            <button type="button">Save</button>
+                            <button class="save-button" type="button">Save</button>
                             <button type="button">Cancel</button>
                         </div>
                     </section>

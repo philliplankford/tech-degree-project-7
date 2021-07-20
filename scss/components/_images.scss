@@ -8,12 +8,22 @@
     margin: 0 0.7rem;
 }
 
+.header-right {
+    .profile-img {
+        width: 35px;
+        height: 35px;
+        margin: 0 10px;
+    }
+    .svg {
+        width: 20px; 
+        height: 20px;
+    }
+}
+
 .members,
 .activity {
-    
     .profile-img {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
+        width: 75px;
+        height: 75px;
     }
 }

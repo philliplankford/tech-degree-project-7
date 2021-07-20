@@ -78,7 +78,7 @@ for (let i = 0; i < recentActivity.length; i++) {
     `<img src=${recentActivity[i].profilePicture} class="profile-img">
         <div class="members-text">
             <p>${recentActivity[i].name} ${recentActivity[i].activity} <strong>${recentActivity[i].post}</strong></p>
-        </div>
-        <p>${recentActivity[i].when}</p>`
+            <p>${recentActivity[i].when}</p>
+        </div>`
     activitySection.appendChild(newActivity);
 }

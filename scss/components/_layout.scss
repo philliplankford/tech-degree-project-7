@@ -26,6 +26,11 @@ section,
 .dashboard-header {
     display: flex; 
     justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    input {
+        padding: 5px;
+    }
 }
 .recent-activity-container,
 .new-member-container {
@@ -57,30 +62,20 @@ section,
     .profile-img {
         max-width: 50px;
     }
-    .svg {
-        width: 25px; 
-        height: 25px;
-    }
     h1 {
         font-size: 1.5em;
         margin-right: 1em;
     }
     p {
-        font-size: .7em; 
+        font-size: .6em; 
         font-weight: 100;
     }
 }
 
 .header-right {
     display: flex; 
-    justify-content: space-evenly;
-    align-items: flex-end;
-    p {
-        align-items: center;
-        flex-basis: content;
-    }
+    align-items: center;
 }
-
 
 .site-nav {
     grid-area: site-nav;
@@ -98,11 +93,78 @@ section,
 .social-container {
     display: flex; 
     flex-direction: column;
+    margin-bottom: 15px;
     & > div {
         margin-top: 1rem;
     }
 }
 
+form {
+    input,
+    textarea,
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid $col-form-borders;
+        border-radius: 5px;
+        font-weight: 100;
+    }
+    input, 
+    textarea {
+        background-color: lighten($col-form-borders, 10%);
+    }
+    textarea {
+        height: 150px;
+    }
+    button {
+        color: $col-white; 
+        background-color: $col-primary;
+    }
+}
+
+.settings {
+    button,
+    select {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid $col-form-borders;
+        border-radius: 5px;
+        font-weight: 100;
+    }
+    select {
+        width: 100%;
+    }
+    button {
+        width: 48%;
+    }
+    .save-button {
+        background-color: $col-primary;
+        color: $col-white;
+    }
+    .settings-buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.social-container {
+    svg {
+        margin-right: 10px;
+        fill: $col-white;
+        background-color: $col-primary;
+        border: 15px solid $col-primary;
+        border-radius: 50%;
+    }
+}
+
+.new-member-container,
+.recent-activity-container {
+    margin-top: 10px;
+    p:last-child {
+        margin-bottom: 10px;
+    }
+}
 @media (min-width: $tablet-break) {
 
 }

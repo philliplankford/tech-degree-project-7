@@ -8,7 +8,21 @@ h3 {
     font-size: 1em;
 }
 
+h3 {
+    text-transform: uppercase;
+    margin-top: 10px;
+}
 a {
     text-decoration: none;
     color: $col-secondary;
+}
+
+.vert-line {
+    background-color: $col-form-borders;
+    padding: 35px 1px 0 0;
+}
+
+.members,
+.activity {
+    font-size: .9rem;
 }
