@@ -62,7 +62,7 @@ const activitySection = document.querySelector('.activity');
 for (let i = 0; i < members.length; i++) {
     let newMember = document.createElement('div');
     newMember.className = "new-member-container";
-    newMember.innerHTML = `<img src=${members[i].profilePicture} class="profile-image">
+    newMember.innerHTML = `<img src=${members[i].profilePicture} class="profile-img">
             <div class="members-text">
                 <p>${members[i].name}</p>
                 <a href="#">${members[i].email}</a>
@@ -75,9 +75,9 @@ for (let i = 0; i < recentActivity.length; i++) {
     let newActivity = document.createElement('div');
     newActivity.className = "recent-activity-container";
     newActivity.innerHTML = 
-    `<img src=${recentActivity[i].profilePicture} class="profile-image">
+    `<img src=${recentActivity[i].profilePicture} class="profile-img">
         <div class="members-text">
-            <p>${recentActivity[i].name}${recentActivity[i].activity}${recentActivity[i].post}</p>
+            <p>${recentActivity[i].name} ${recentActivity[i].activity} <strong>${recentActivity[i].post}</strong></p>
         </div>
         <p>${recentActivity[i].when}</p>`
     activitySection.appendChild(newActivity);

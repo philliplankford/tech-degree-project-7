@@ -347,6 +347,11 @@ h3 {
   font-size: 1em;
 }
 
+a {
+  text-decoration: none;
+  color: #4d4c72;
+}
+
 .profile-img {
   border-radius: 50%;
 }
@@ -355,6 +360,13 @@ h3 {
   width: 30px;
   height: 30px;
   margin: 0 0.7rem;
+}
+
+.members .profile-img,
+.activity .profile-img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
 
 * {
@@ -368,9 +380,32 @@ body {
   height: 100vh;
 }
 
-.dashboard {
+hr {
+  padding: 0.5px 0px;
+  background-color: #ccc;
+  border: none;
+  margin-bottom: 5px;
+}
+
+section,
+.dashboard-header {
   max-width: 94%;
   margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recent-activity-container,
+.new-member-container {
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.recent-activity-container:last-child,
+.new-member-container:last-child {
+  border-bottom: none;
 }
 
 .main-grid {
@@ -428,6 +463,14 @@ body {
   grid-area: site-main;
 }
 
+.social-container {
+  display: flex;
+  flex-direction: column;
+}
+.social-container > div {
+  margin-top: 1rem;
+}
+
 .traffic-nav {
   display: flex;
   text-decoration: none;
@@ -477,6 +520,18 @@ body {
 @media (min-width: 768px) {
   .main-grid {
     grid-template-rows: 70px 75px 1fr;
+  }
+
+  .social-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .social-container > div {
+    flex-grow: 4;
+    margin-right: 1rem;
+  }
+  .social-container > div:last-child {
+    margin: 0;
   }
 }
 @media (min-width: 1024px) {

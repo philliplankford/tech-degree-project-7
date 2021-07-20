@@ -9,10 +9,31 @@ body {
     height: 100vh;
 }
 
+hr {
+    padding: .5px 0px;
+    background-color: $col-form-borders;
+    border: none;
+    margin-bottom: 5px;
 
-.dashboard {
+}
+
+section,
+.dashboard-header {
     max-width: 94%;
     margin: 0 auto;
+}
+
+.dashboard-header {
+    display: flex; 
+    justify-content: space-between;
+}
+.recent-activity-container,
+.new-member-container {
+    border-bottom: 1px solid $col-form-borders;
+    text-align: center;
+    &:last-child {
+        border-bottom: none;
+    }
 }
 
 .main-grid { 
@@ -72,6 +93,14 @@ body {
 
 .site-main {
     grid-area: site-main;
+}
+
+.social-container {
+    display: flex; 
+    flex-direction: column;
+    & > div {
+        margin-top: 1rem;
+    }
 }
 
 @media (min-width: $tablet-break) {
