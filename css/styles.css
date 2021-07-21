@@ -1260,11 +1260,22 @@ form button {
   flex: 0.7;
   border: 2px solid #ccc;
   border-radius: 90px/90px;
+  max-width: 100px;
 }
 .profile-toggle p,
 .email-toggle p {
   font-weight: 100;
   font-size: 0.7rem;
+}
+
+.alert-banner {
+  display: flex;
+  justify-content: space-between;
+  background-color: #7477bf;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  padding: 10px;
 }
 
 .traffic-nav {

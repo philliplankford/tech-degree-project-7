@@ -182,9 +182,20 @@ form {
         flex: .7;
         border: 2px solid #ccc;
         border-radius: 90px/90px;
+        max-width: 100px;
     }
     p {
         font-weight: 100;
         font-size: .7rem;
     }
+}
+
+.alert-banner {
+    display: flex;
+    justify-content: space-between;
+    background-color: $col-primary;
+    color: $col-white;
+    border-radius: 5px;
+    font-size: .7rem;
+    padding: 10px;
 }
