@@ -1302,6 +1302,20 @@ form button {
   justify-self: center;
 }
 
+#notifications {
+  position: relative;
+  right: -25px;
+  top: -30px;
+  background-color: #90ee90;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+}
+
+#bell:hover {
+  transform: rotate(10deg);
+}
+
 .traffic-nav {
   display: flex;
   text-decoration: none;

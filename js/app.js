@@ -60,6 +60,10 @@ const membersSection = document.querySelector('.members');
 const activitySection = document.querySelector('.activity');
 const alertBanner = document.getElementById('alerts');
 
+const user = document.getElementById('user-field');
+const message = document.getElementById('message-field');
+const send = document.getElementById('send');
+
 alertBanner.innerHTML = 
     `
     <div class="alert-banner">
@@ -107,3 +111,18 @@ for (let i = 0; i < recentActivity.length; i++) {
         </div>`
     activitySection.appendChild(newActivity);
 }
+
+send.addEventListener('click', () => {
+    if (user.value === "" && message.value === "") {
+        alert("Please fill out user and message fields before sending.")
+    } else if (user.value === "") {
+        alert("Please fill out user field before sending.")
+    } else if (message.value === "") {
+        alert("Please fill out message field before sending.")
+    } else {
+        alert(`Message successfully sent to ${user.value}`);
+        user.value = '';
+        message.value = '';
+    }
+
+})

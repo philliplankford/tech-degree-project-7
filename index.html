@@ -11,8 +11,8 @@
             <header class="site-header">
                 <h1><strong>Web</strong>App&#8482;</h1>
                 <div class="header-right">
-                    <div id="bell">
-                        <img src="svgs/bell.svg" alt="bell" class="svg">
+                    <div>
+                        <img src="svgs/bell.svg" alt="bell" class="svg" id="bell">
                         <div id="notifications"></div>
                     </div>
                     <hr class="vert-line">
@@ -22,9 +22,9 @@
             </header>
             <nav class="site-nav">
                 <a href="#"><img src="svgs/home.svg" class="svg"></a>
-                <a href="#"><img src="svgs/bar-chart.svg" class="svg"></a>
-                <a href="#"><img src="svgs/members.svg" class="svg"></a>
-                <a href="#"><img src="svgs/settings.svg" class="svg"></a>
+                <a href="#charts"><img src="svgs/bar-chart.svg" class="svg"></a>
+                <a href="#members"><img src="svgs/members.svg" class="svg"></a>
+                <a href="#settings"><img src="svgs/settings.svg" class="svg"></a>
             </nav>
             <main class='site-main'>
                 <div class="dashboard-header">
@@ -38,7 +38,7 @@
                 <section id="alerts" class="alerts">
                     <!-- inserted w js-->
                 </section>
-                <section class="traffic">
+                <section class="traffic" id="charts">
                     <div class="traffic-header">
                         <h3>Traffic</h3>
                         <ul class="traffic-nav">
@@ -100,7 +100,7 @@
                     </div>
                 </section>
 
-                <section class="members">
+                <section class="members" id="members">
                     <h3>New Members</h3>
                     <!-- inserted w js -->
                 </section>
@@ -113,13 +113,13 @@
                 <section class="message-user">
                     <h3>Message User</h3>
                     <form>
-                        <input type="text" placeholder="Search for User">
-                        <textarea placeholder="Message for User"></textarea>
+                        <input type="text" placeholder="Search for User" id="user-field">
+                        <textarea placeholder="Message for User" id="message-field"></textarea>
                         <button type="button" id="send">Send</button>
                     </form>
                 </section>
 
-                <section class="settings">
+                <section class="settings" id="settings">
                     <h3>Settings</h3>
 
                     <div class="toggle-wrapper">
