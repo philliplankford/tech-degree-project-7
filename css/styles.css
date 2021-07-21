@@ -1276,6 +1276,11 @@ form button {
   border-radius: 5px;
   font-size: 0.7rem;
   padding: 10px;
+  margin-bottom: 10px;
+}
+
+.chart-half-container {
+  justify-self: center;
 }
 
 .traffic-nav {
