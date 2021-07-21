@@ -16,20 +16,40 @@ hr {
     margin-bottom: 5px;
 }
 
-section,
-.dashboard-header {
+section { //.dashboard-header 
     max-width: 94%;
     margin: 0 auto;
+}
+
+.traffic,
+.daily-traffic,
+.mobile-users,
+.social-stats,
+.members,
+.activity,
+.message-user {
+    border-bottom: 1px solid $col-form-borders;
 }
 
 .dashboard-header {
     display: flex; 
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
-    input {
-        padding: 5px;
-    }
+    margin-bottom: 10px;
+    // padding: 10px 0;
+}
+
+.dashboard-search {
+    padding: 10px;
+    background-color: lighten($col-form-borders, 10%);
+    border-bottom: 1px solid $col-form-borders;
+    border-left: 1px solid $col-form-borders;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.dashboard-title {
+    padding: 10px;
 }
 
 .recent-activity-container,
@@ -204,3 +224,4 @@ form {
 .chart-half-container {
     justify-self: center;
 }
+

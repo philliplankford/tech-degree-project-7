@@ -35,7 +35,7 @@
         grid-column: 2 / span 1;
     }
 
-    section, .dashboard-header {
+    section { //, .dashboard-header 
         max-width: 100%;
         margin: 0 10px;
     }
@@ -91,6 +91,12 @@
 
     .toggle-wrapper {
         max-width: 50%;
+    }
+
+    .daily-traffic,
+    .members,
+    .message-user {
+        border-right: 1px solid $col-form-borders;
     }
 }
 

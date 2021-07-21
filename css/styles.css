@@ -1099,20 +1099,39 @@ hr {
   margin-bottom: 5px;
 }
 
-section,
-.dashboard-header {
+section {
   max-width: 94%;
   margin: 0 auto;
+}
+
+.traffic,
+.daily-traffic,
+.mobile-users,
+.social-stats,
+.members,
+.activity,
+.message-user {
+  border-bottom: 1px solid #ccc;
 }
 
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  margin-bottom: 10px;
 }
-.dashboard-header input {
-  padding: 5px;
+
+.dashboard-search {
+  padding: 10px;
+  background-color: #e6e6e6;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.dashboard-title {
+  padding: 10px;
 }
 
 .recent-activity-container,
@@ -1369,7 +1388,7 @@ form button {
     grid-column: 2/span 1;
   }
 
-  section, .dashboard-header {
+  section {
     max-width: 100%;
     margin: 0 10px;
   }
@@ -1424,6 +1443,12 @@ form button {
 
   .toggle-wrapper {
     max-width: 50%;
+  }
+
+  .daily-traffic,
+.members,
+.message-user {
+    border-right: 1px solid #ccc;
   }
 }
 @media (min-width: 1024px) {
