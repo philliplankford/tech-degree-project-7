@@ -27,7 +27,7 @@
                 <a href="#"><img src="svgs/settings.svg" class="svg"></a>
             </nav>
             <main class='site-main'>
-                <div class="dashboard">
+             <!--  <div class="dashboard"> -->
                     <div class="dashboard-header">
                         <h2>Dashboard</h2>
                         <div class="dashboard-search">
@@ -37,34 +37,36 @@
                     <section id="alerts" class="alerts">
                         <ul></ul>
                     </section>
-                    <section>
-                        <h3>Traffic</h3>
-                        <ul class="traffic-nav">
-                            <li class="active">Hourly</li>
-                            <li>Daily</li>
-                            <li>Weekly</li>
-                            <li>Monthly</li>
-                        </ul>
+                    <section class="traffic">
+                        <div class="traffic-header">
+                            <h3>Traffic</h3>
+                            <ul class="traffic-nav">
+                                <li class="active">Hourly</li>
+                                <li>Daily</li>
+                                <li>Weekly</li>
+                                <li>Monthly</li>
+                            </ul>
+                        </div>
                         <div class="chart-full-container">
                             <canvas id="traffic-chart"></canvas>
-                      </div>
+                        </div>
                     </section>
-                    <hr />
-                    <section>
+                    <!-- <hr /> -->
+                    <section class="daily-traffic">
                         <h3>Daily Traffic</h3>
                         <div class="chart-half-container">
                             <canvas id="daily-traffic-chart"></canvas>
                         </div>
                     </section>
-                    <hr />
-                    <section>
+                    <!-- <hr /> -->
+                    <section class="mobile-users">
                         <h3>Mobile Users</h3>
                         <div class="chart-half-container">
                             <canvas id="mobile-users-chart"></canvas>
                         </div>
                     </section>
-                    <hr />
-                    <section>
+                    <!-- <hr /> -->
+                    <section class="social-stats">
                         <h3>Social Stats</h3>
                         <div class="social-container">
                             <div class="fb">
@@ -96,18 +98,18 @@
                             </div>
                         </div>
                     </section>
-                    <hr />
+                    <!-- <hr /> -->
                     <section class="members">
                         <h3>New Members</h3>
                         <!-- insert dynamically -->
                     </section>
-                    <hr />
+                    <!-- <hr /> -->
                     <section class="activity">
                         <h3>Recent Activity</h3>
                         <!-- insert dynamically -->
                     </section>
-                    <hr />
-                    <section>
+                    <!-- <hr /> -->
+                    <section class="message-user">
                         <h3>Message User</h3>
                         <form>
                             <input type="text" placeholder="Search for User">
@@ -115,33 +117,35 @@
                             <button type="button" id="send">Send</button>
                         </form>
                     </section>
-                    <hr />
+                    <!-- <hr /> -->
                     <section class="settings">
                         <h3>Settings</h3>
 
                         <!-- two toggle buttons here-->
-                        <div class="email-toggle">
-                            <p>Send Email Notifications</p>
-                            <label class="switch-light switch-ios" onclick="">
-                                <input type="checkbox">
-                                <span>
-                                    <span>Off</span>
-                                    <span>On</span>
-                                    <a></a>
-                                </span>
-                            </label>
-                        </div>
+                        <div class="toggle-wrapper">
+                            <div class="email-toggle">
+                                <p>Send Email Notifications</p>
+                                <label class="switch-light switch-ios" onclick="">
+                                    <input type="checkbox">
+                                    <span>
+                                        <span>Off</span>
+                                        <span>On</span>
+                                        <a></a>
+                                    </span>
+                                </label>
+                            </div>
 
-                        <div class="profile-toggle">
-                            <p>Set Profile to Public</p>
-                            <label class="switch-light switch-ios" onclick="">
-                                <input type="checkbox">
-                                <span>
-                                    <span>Off</span>
-                                    <span>On</span>
-                                    <a></a>
-                                </span>
-                            </label>
+                            <div class="profile-toggle">
+                                <p>Set Profile to Public</p>
+                                <label class="switch-light switch-ios" onclick="">
+                                    <input type="checkbox">
+                                    <span>
+                                        <span>Off</span>
+                                        <span>On</span>
+                                        <a></a>
+                                    </span>
+                                </label>
+                            </div>
                         </div>
 
                         <select>
@@ -156,7 +160,7 @@
                             <button type="button">Cancel</button>
                         </div>
                     </section>
-                </div>
+               <!-- </div> -->
             </main>
         </div>
         <script type="text/javascript" src="js/app.js"></script>

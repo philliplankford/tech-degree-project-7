@@ -62,12 +62,17 @@ const activitySection = document.querySelector('.activity');
 for (let i = 0; i < members.length; i++) {
     let newMember = document.createElement('div');
     newMember.className = "new-member-container";
-    newMember.innerHTML = `<img src=${members[i].profilePicture} class="profile-img">
+    newMember.innerHTML = `
+        <div class="flex-container">
             <div class="members-text">
-                <p>${members[i].name}</p>
-                <a href="#">${members[i].email}</a>
+                <img src=${members[i].profilePicture} class="profile-img">
+                <div class="inner-text">
+                    <p>${members[i].name}</p>
+                    <a href="#">${members[i].email}</a>
+                </div>
             </div>
-            <p>${members[i].dateJoined}</p>`
+            <p>${members[i].dateJoined}</p>
+        </div>`
     membersSection.appendChild(newMember);
 }
 
@@ -75,10 +80,15 @@ for (let i = 0; i < recentActivity.length; i++) {
     let newActivity = document.createElement('div');
     newActivity.className = "recent-activity-container";
     newActivity.innerHTML = 
-    `<img src=${recentActivity[i].profilePicture} class="profile-img">
-        <div class="members-text">
-            <p>${recentActivity[i].name} ${recentActivity[i].activity} <strong>${recentActivity[i].post}</strong></p>
-            <p>${recentActivity[i].when}</p>
+    `   <div class="flex-container"> 
+            <div class="members-text">   
+                <img src=${recentActivity[i].profilePicture} class="profile-img">
+                <div class="inner-text">
+                    <p>${recentActivity[i].name} ${recentActivity[i].activity} <strong>${recentActivity[i].post}</strong></p>
+                    <p>${recentActivity[i].when}</p>
+                </div>
+            </div>
+            <a class="carrot">></a>
         </div>`
     activitySection.appendChild(newActivity);
 }

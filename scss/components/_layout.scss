@@ -14,7 +14,6 @@ hr {
     background-color: $col-form-borders;
     border: none;
     margin-bottom: 5px;
-
 }
 
 section,
@@ -32,6 +31,7 @@ section,
         padding: 5px;
     }
 }
+
 .recent-activity-container,
 .new-member-container {
     border-bottom: 1px solid $col-form-borders;
@@ -187,11 +187,4 @@ form {
         font-weight: 100;
         font-size: .7rem;
     }
-}
-@media (min-width: $tablet-break) {
-
-}
-
-@media (min-width: $desktop-break) {
-
 }

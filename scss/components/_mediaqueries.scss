@@ -1,21 +1,9 @@
 @media (min-width: $tablet-break) {
+    /*
     .main-grid {
         grid-template-rows: 70px 75px 1fr;
     }
-    .social-container {
-        display: flex; 
-        flex-direction: row;
-        & > div {
-            flex-grow: 4;
-            margin-right: 1rem;
-            &:last-child {
-                margin: 0;
-            }
-        }
-    }
-}
-
-@media (min-width: $desktop-break) {
+    */
     .main-grid {
         grid-template-columns: 80px 1fr;
         grid-template-rows: 60px 1fr;
@@ -23,11 +11,108 @@
         "site-header site-header"
         "site-nav site-main";
     }
+
+    .site-main {
+        display: grid;
+        grid-template-columns: 50%;
+    }
+
+    .dashboard-header,
+    .alerts,
+    .traffic,
+    .social-stats,
+    .members,
+    .activity,
+    .message-user,
+    .settings {
+        grid-column: 1 / span 2;
+    }
+
+    .daily-traffic {
+        grid-column: 1 / span 1;
+    }
+    .mobile-users {
+        grid-column: 2 / span 1;
+    }
+
+    section, .dashboard-header {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+
+    .traffic-header {
+        display: flex; 
+        justify-content: space-between;
+    }
+    
+
+    .flex-container {
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+        .profile-img {
+            margin-right: 10px;
+        }
+    }
+
+    .flex-container {
+        margin-bottom: 10px;
+    }
+
+    .members-text {
+        display: flex;
+        align-items: center;
+    }
+
+    .carrot {
+        display: inline;
+    }
+
+    .inner-text {
+        text-align: left;
+    }
+
     .site-nav {
         flex-direction: column;
         justify-content: start;
         .svg {
             margin: 1rem 0;
         }
+    }
+
+    .social-container {
+        display: flex; 
+        flex-direction: row;
+        & > div {
+            flex-grow: 4;
+            margin-right: 1rem;
+        }
+    }
+
+    .toggle-wrapper {
+        max-width: 50%;
+    }
+}
+
+@media (min-width: $desktop-break) {
+    .dashboard-header,
+    .alerts,
+    .traffic,
+    .social-stats {
+        grid-column: 1 / span 2;
+    }
+
+    .daily-traffic,
+    .members,
+    .message-user {
+        grid-column: 1 / span 1;
+    }
+    .mobile-users,
+    .activity,
+    .settings {
+        grid-column: 2 / span 1;
+    }
+    .toggle-wrapper {
+        max-width: 75%;
     }
 }
