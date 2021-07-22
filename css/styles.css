@@ -1287,6 +1287,11 @@ form button {
   font-size: 0.7rem;
 }
 
+.alerts {
+  width: 98%;
+  margin: 0 auto;
+}
+
 .alert-banner {
   display: flex;
   justify-content: space-between;
@@ -1466,13 +1471,6 @@ form button {
   }
 }
 @media (min-width: 1024px) {
-  .dashboard-header,
-.alerts,
-.traffic,
-.social-stats {
-    grid-column: 1/span 2;
-  }
-
   .daily-traffic,
 .members,
 .message-user {

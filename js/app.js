@@ -84,7 +84,7 @@ for (let i = 0; i < members.length; i++) {
     newMember.innerHTML = `
         <div class="flex-container">
             <div class="members-text">
-                <img src=${members[i].profilePicture} class="profile-img">
+                <img src=${members[i].profilePicture} class="profile-img" alt="a picture of a web member">
                 <div class="inner-text">
                     <p>${members[i].name}</p>
                     <a href="#">${members[i].email}</a>
@@ -101,7 +101,7 @@ for (let i = 0; i < recentActivity.length; i++) {
     newActivity.innerHTML = 
     `   <div class="flex-container"> 
             <div class="members-text">   
-                <img src=${recentActivity[i].profilePicture} class="profile-img">
+                <img src=${recentActivity[i].profilePicture} class="profile-img" alt="a picture of a web member">
                 <div class="inner-text">
                     <p>${recentActivity[i].name} ${recentActivity[i].activity} <strong>${recentActivity[i].post}</strong></p>
                     <p>${recentActivity[i].when}</p>
@@ -126,3 +126,38 @@ send.addEventListener('click', () => {
     }
 
 })
+
+// Saving 
+const email = document.getElementById('email-check');
+const public = document.getElementById('public-check');
+const save = document.getElementById('save-button');
+const cancel = document.getElementById('cancel-button');
+const timezone = document.getElementById('timezone');
+
+save.addEventListener('click', () => {
+    localStorage.setItem('email-status', email.checked);
+    localStorage.setItem('public-status', public.checked);
+    localStorage.setItem('timezone-status', timezone.value);
+})
+
+cancel.addEventListener('click', () => {
+    localStorage.removeItem('email-status');
+    localStorage.removeItem('public-status');
+    localStorage.removeItem('timezone-status');
+    email.checked = false; 
+    public.checked = false; 
+    timezone.value = 'Select a Timezone';
+})
+
+if (localStorage.getItem('email-status') === 'true') {
+    email.checked = true; 
+} else { email.checked = false; }
+
+if (localStorage.getItem('public-status') === 'true') {
+    public.checked = true; 
+} else { public.checked = false; }
+
+if (localStorage.getItem('timezone-status')) {
+    timezone.value = localStorage.getItem('timezone-status');
+}
+

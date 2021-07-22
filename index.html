@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lan="eng">
+<html lang="en">
     <head>
         <title>WebApp Dashboard</title>
         <meta charset="UTF-8">
@@ -12,19 +12,19 @@
                 <h1><strong>Web</strong>App&#8482;</h1>
                 <div class="header-right">
                     <div>
-                        <img src="svgs/bell.svg" alt="bell" class="svg" id="bell">
+                        <img src="svgs/bell.svg" class="svg" id="bell" alt="bell">
                         <div id="notifications"></div>
                     </div>
                     <hr class="vert-line">
-                    <img src="images/member-1.jpg" class="profile-img">
+                    <img src="images/member-1.jpg" class="profile-img" alt="a picture of a web member">
                     <p class="header-name">Student Name</p>
                 </div>
             </header>
             <nav class="site-nav">
-                <a href="#"><img src="svgs/home.svg" class="svg"></a>
-                <a href="#charts"><img src="svgs/bar-chart.svg" class="svg"></a>
-                <a href="#members"><img src="svgs/members.svg" class="svg"></a>
-                <a href="#settings"><img src="svgs/settings.svg" class="svg"></a>
+                <a href="#"><img src="svgs/home.svg" class="svg" alt="A house icon to return home"></a>
+                <a href="#charts"><img src="svgs/bar-chart.svg" class="svg" alt="A bar-graph icon for charts"></a>
+                <a href="#members"><img src="svgs/members.svg" class="svg" alt="A person icon for memebers"></a>
+                <a href="#settings"><img src="svgs/settings.svg" class="svg" alt="A gear icon for settings"></a>
             </nav>
             <main class='site-main'>
                 <div class="dashboard-header">
@@ -35,9 +35,9 @@
                             <input type="search" placeholder="search...">
                     </div>
                 </div>
-                <section id="alerts" class="alerts">
+                <div id="alerts" class="alerts">
                     <!-- inserted w js-->
-                </section>
+                </div>
                 <section class="traffic" id="charts">
                     <div class="traffic-header">
                         <h3>Traffic</h3>
@@ -126,7 +126,7 @@
                         <div class="email-toggle">
                             <p>Send Email Notifications</p>
                             <label class="switch-light switch-ios" onclick="">
-                                <input type="checkbox">
+                                <input type="checkbox" id="email-check">
                                 <span>
                                     <span>Off</span>
                                     <span>On</span>
@@ -138,7 +138,7 @@
                         <div class="profile-toggle">
                             <p>Set Profile to Public</p>
                             <label class="switch-light switch-ios" onclick="">
-                                <input type="checkbox">
+                                <input type="checkbox" id="public-check">
                                 <span>
                                     <span>Off</span>
                                     <span>On</span>
@@ -148,7 +148,7 @@
                         </div>
                     </div>
 
-                    <select>
+                    <select id="timezone">
                         <option disabled selected>Select a Timezone</option>
                         <option>Eastern</option>
                         <option>Western</option>
@@ -156,14 +156,14 @@
                     </select>
 
                     <div class="settings-buttons">
-                        <button class="save-button" type="button">Save</button>
-                        <button type="button">Cancel</button>
+                        <button class="save-button" type="button" id="save-button">Save</button>
+                        <button type="button" id="cancel-button">Cancel</button>
                     </div>
                 </section>
             </main>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.0/chart.js"></script>
         <script src="js/charts.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>

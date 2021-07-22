@@ -210,6 +210,11 @@ form {
     }
 }
 
+.alerts {
+    width: 98%;
+    margin: 0 auto;
+}
+
 .alert-banner {
     display: flex;
     justify-content: space-between;
@@ -219,6 +224,7 @@ form {
     font-size: .7rem;
     padding: 10px;
     margin-bottom: 10px;
+
 }
 
 .chart-half-container {

@@ -101,12 +101,12 @@
 }
 
 @media (min-width: $desktop-break) {
-    .dashboard-header,
-    .alerts,
-    .traffic,
-    .social-stats {
-        grid-column: 1 / span 2;
-    }
+    // .dashboard-header,
+    // .alerts,
+    // .traffic,
+    // .social-stats {
+    //     grid-column: 1 / span 2;
+    // }
 
     .daily-traffic,
     .members,
