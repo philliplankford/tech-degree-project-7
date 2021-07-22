@@ -85,16 +85,17 @@ const trafficConfig = {
 
 const buildtrafficChart = new Chart(trafficChart, trafficConfig);
 
-trafficNav = document.querySelector('.traffic-nav');
+let trafficNav = document.querySelector('.traffic-nav');
 trafficNav.addEventListener('click', (e) => { 
-    if (e.target.tagName = 'li') {
+    if (e.target.tagName === 'LI') {
         let children = trafficNav.childNodes;
         for (let i = 0; i < children.length; i++) {
-            if (children[i].tagName = 'li') {
+            if (children[i].tagName === 'LI') {
                 children[i].className = '';
             }
         }
         let text = e.target.innerHTML;
+        console.log(text);
         switch (text) {
             case 'Hourly':
                 updateChart(buildtrafficChart, trafficDataHourly);
@@ -109,10 +110,10 @@ trafficNav.addEventListener('click', (e) => {
                 updateChart(buildtrafficChart, trafficDataMonthly);
                 break;
             default: 
-                updateChart(buildtrafficChart, trafficDataHourly);
-                console.log('error');
+                return;
             break;
         }
+        console.log(e.target);
         e.target.className = 'active';
     }
 });
@@ -177,6 +178,7 @@ const mobileConfig = {
     type: 'doughnut',
     data: mobileData,
     options: {
+        aspectRatio: 1.9, 
         plugins: {
             legend: {
                 position: 'right',

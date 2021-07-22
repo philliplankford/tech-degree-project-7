@@ -1100,8 +1100,7 @@ hr {
 }
 
 section {
-  max-width: 94%;
-  margin: 0 auto;
+  padding: 1rem;
 }
 
 .traffic,
@@ -1128,6 +1127,7 @@ section {
   border-left: 1px solid #ccc;
   flex: 1;
   justify-content: flex-end;
+  border-radius: 0px 0px 0px 5px;
 }
 
 .dashboard-title {
@@ -1212,7 +1212,7 @@ form input,
 form textarea,
 form button {
   width: 100%;
-  padding: 10px;
+  padding: 7px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -1223,7 +1223,7 @@ form textarea {
   background-color: #e6e6e6;
 }
 form textarea {
-  height: 150px;
+  height: 100px;
 }
 form button {
   color: #fff;
@@ -1325,13 +1325,14 @@ form button {
   display: flex;
   text-decoration: none;
   list-style: none;
+  justify-content: center;
 }
 .traffic-nav li {
   color: black;
   background-color: #fff;
   border-radius: 90px/90px;
   margin-right: 10px;
-  padding: 10px;
+  padding: 6px;
 }
 .traffic-nav .active {
   background-color: #90ee90;
@@ -1407,11 +1408,6 @@ form button {
     grid-column: 2/span 1;
   }
 
-  section {
-    max-width: 100%;
-    margin: 0 10px;
-  }
-
   .traffic-header {
     display: flex;
     justify-content: space-between;
@@ -1485,6 +1481,13 @@ form button {
 
   .toggle-wrapper {
     max-width: 75%;
+  }
+
+  .settings,
+.message-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 }
 

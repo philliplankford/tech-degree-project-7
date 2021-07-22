@@ -1,3 +1,4 @@
+// "DATABASES"
 const members = [ 
     {
         profilePicture: 'images/member-1.jpg',
@@ -56,13 +57,50 @@ const recentActivity = [
     }
 ];
 
+// INSERT ELEMENTS
 const membersSection = document.querySelector('.members');
 const activitySection = document.querySelector('.activity');
-const alertBanner = document.getElementById('alerts');
 
-const user = document.getElementById('user-field');
-const message = document.getElementById('message-field');
-const send = document.getElementById('send');
+function insertMemberActivityData( array, section, className ) {
+    for (let i = 0; i < array.length; i++) {
+        let inner = '';
+        if (array === members) {
+            inner = `
+            <div class="flex-container">
+                <div class="members-text">
+                    <img src=${members[i].profilePicture} class="profile-img" alt="a picture of a web member">
+                    <div class="inner-text">
+                        <p>${members[i].name}</p>
+                        <a href="#">${members[i].email}</a>
+                    </div>
+                </div>
+                <p>${members[i].dateJoined}</p>
+            </div>`
+        } else if ( array === recentActivity) {
+            inner =     `   
+                <div class="flex-container"> 
+                <div class="members-text">   
+                    <img src=${recentActivity[i].profilePicture} class="profile-img" alt="a picture of a web member">
+                    <div class="inner-text">
+                        <p>${recentActivity[i].name} ${recentActivity[i].activity} <strong>${recentActivity[i].post}</strong></p>
+                        <p>${recentActivity[i].when}</p>
+                    </div>
+                </div>
+                <a class="carrot">></a>
+            </div>`
+        } else {};
+        let newElement = document.createElement('div');
+        newElement.className = className;
+        newElement.innerHTML = inner;
+        section.appendChild(newElement);
+    }
+}
+
+insertMemberActivityData( members, membersSection, 'new-member-container' );
+insertMemberActivityData( recentActivity, activitySection, 'recent-activity-container' );
+
+// ALERTS
+const alertBanner = document.getElementById('alerts');
 
 alertBanner.innerHTML = 
     `
@@ -71,6 +109,7 @@ alertBanner.innerHTML =
         <p class="alert-banner-close">x</p>
     </div>
     `
+    
 alertBanner.addEventListener('click', e => {
     const element = e.target; 
     if (element.classList.contains("alert-banner-close")) {
@@ -78,6 +117,63 @@ alertBanner.addEventListener('click', e => {
     }
 });
 
+// SEND MESSAGE
+const user = document.getElementById('user-field');
+const message = document.getElementById('message-field');
+const send = document.getElementById('send');
+
+send.addEventListener('click', () => {
+    if (user.value === "" && message.value === "") {
+        alert("Please fill out user and message fields before sending.")
+    } else if (user.value === "") {
+        alert("Please fill out user field before sending.")
+    } else if (message.value === "") {
+        alert("Please fill out message field before sending.")
+    } else {
+        alert(`Message successfully sent to ${user.value}`);
+        user.value = '';
+        message.value = '';
+    }
+})
+
+// SAVING
+const email = document.getElementById('email-check');
+const public = document.getElementById('public-check');
+const save = document.getElementById('save-button');
+const cancel = document.getElementById('cancel-button');
+const timezone = document.getElementById('timezone');
+
+save.addEventListener('click', () => {
+    localStorage.setItem('email-status', email.checked);
+    localStorage.setItem('public-status', public.checked);
+    localStorage.setItem('timezone-status', timezone.value);
+})
+
+cancel.addEventListener('click', () => {
+    localStorage.removeItem('email-status');
+    localStorage.removeItem('public-status');
+    localStorage.removeItem('timezone-status');
+    email.checked = false; 
+    public.checked = false; 
+    timezone.value = 'Select a Timezone';
+})
+
+function checkItem( key, element ) {
+    if (localStorage.getItem(key) === 'true') {
+        element.checked = true;
+    } else {
+        element.checked = false;
+    }
+}
+
+checkItem( 'email-status', email );
+checkItem( 'public-status', public );
+
+if (localStorage.getItem('timezone-status')) {
+    timezone.value = localStorage.getItem('timezone-status');
+}
+
+/*
 for (let i = 0; i < members.length; i++) {
     let newMember = document.createElement('div');
     newMember.className = "new-member-container";
@@ -111,53 +207,4 @@ for (let i = 0; i < recentActivity.length; i++) {
         </div>`
     activitySection.appendChild(newActivity);
 }
-
-send.addEventListener('click', () => {
-    if (user.value === "" && message.value === "") {
-        alert("Please fill out user and message fields before sending.")
-    } else if (user.value === "") {
-        alert("Please fill out user field before sending.")
-    } else if (message.value === "") {
-        alert("Please fill out message field before sending.")
-    } else {
-        alert(`Message successfully sent to ${user.value}`);
-        user.value = '';
-        message.value = '';
-    }
-
-})
-
-// Saving 
-const email = document.getElementById('email-check');
-const public = document.getElementById('public-check');
-const save = document.getElementById('save-button');
-const cancel = document.getElementById('cancel-button');
-const timezone = document.getElementById('timezone');
-
-save.addEventListener('click', () => {
-    localStorage.setItem('email-status', email.checked);
-    localStorage.setItem('public-status', public.checked);
-    localStorage.setItem('timezone-status', timezone.value);
-})
-
-cancel.addEventListener('click', () => {
-    localStorage.removeItem('email-status');
-    localStorage.removeItem('public-status');
-    localStorage.removeItem('timezone-status');
-    email.checked = false; 
-    public.checked = false; 
-    timezone.value = 'Select a Timezone';
-})
-
-if (localStorage.getItem('email-status') === 'true') {
-    email.checked = true; 
-} else { email.checked = false; }
-
-if (localStorage.getItem('public-status') === 'true') {
-    public.checked = true; 
-} else { public.checked = false; }
-
-if (localStorage.getItem('timezone-status')) {
-    timezone.value = localStorage.getItem('timezone-status');
-}
-
+*/

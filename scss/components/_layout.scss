@@ -17,8 +17,9 @@ hr {
 }
 
 section { //.dashboard-header 
-    max-width: 94%;
-    margin: 0 auto;
+    // max-width: 94%;
+    // margin: 0 auto;
+    padding: 1rem;
 }
 
 .traffic,
@@ -46,6 +47,7 @@ section { //.dashboard-header
     border-left: 1px solid $col-form-borders;
     flex: 1;
     justify-content: flex-end;
+    border-radius: 0px 0px 0px 5px;
 }
 
 .dashboard-title {
@@ -133,7 +135,7 @@ form {
     textarea,
     button {
         width: 100%;
-        padding: 10px;
+        padding: 7px;
         margin-bottom: 10px;
         border: 1px solid $col-form-borders;
         border-radius: 5px;
@@ -144,7 +146,7 @@ form {
         background-color: lighten($col-form-borders, 10%);
     }
     textarea {
-        height: 150px;
+        height: 100px;
     }
     button {
         color: $col-white; 
