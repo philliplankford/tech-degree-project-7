@@ -2,22 +2,14 @@ const trafficChart = document.getElementById('traffic-chart');
 const dailytrafficChart = document.getElementById('daily-traffic-chart');
 const mobileChart = document.getElementById('mobile-users-chart');
 
-const trafficLabels = [
-    '16-22', 
-    '23-29', 
-    '30-5', 
-    '6-12', 
-    '13-19', 
-    '20-26', 
-    '27-3', 
-    '4-10', 
-    '11-17', 
-    '18-24', 
-    '25-31'
-];
+function updateChart(chart, newData) {
+    chart.data.labels = newData.labels; 
+    chart.data.datasets[0].data = newData.datasets[0].data;
+    chart.update();
+}
 
-const trafficData = {
-    labels: trafficLabels,
+const trafficDataHourly = {
+    labels: ['16-22', '23-29','30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
     datasets: [{
         label: '',
         backgroundColor: 'rgb(116, 119, 191, .5)',
@@ -26,9 +18,47 @@ const trafficData = {
     }]
 };
 
-const config = {
+const trafficDataDaily = {
+    labels: ['Su', 'M', 'T', 'W', 'Thu', 'F', 'S'],
+    datasets: [{
+        label: '',
+        backgroundColor: 'rgb(116, 119, 191, .5)',
+        borderColor: 'rgb(116, 119, 191, .5)',
+        data: [900, 2000, 10, 94, 1500, 1000, 2222]
+    }]
+};
+
+const trafficDataWeekly = {
+    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'],
+    datasets: [{
+        label: '',
+        backgroundColor: 'rgb(116, 119, 191, .5)',
+        borderColor: 'rgb(116, 119, 191, .5)',
+        data: [100, 200, 400, 666, 420, 69]
+    }]
+};
+
+const trafficDataMonthly = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    datasets: [{
+        label: '',
+        backgroundColor: 'rgb(116, 119, 191, .5)',
+        borderColor: 'rgb(116, 119, 191, .5)',
+        data: [400, 200, 900, 1000, 2020, 2021, 400, 500, 600, 700, 888, 910]
+    }]
+};
+
+const trafficConfig = {
     type: 'line',
-    data: trafficData,
+    data: {
+        labels: ['16-22', '23-29','30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
+        datasets: [{
+            label: '',
+            backgroundColor: 'rgb(116, 119, 191, .5)',
+            borderColor: 'rgb(116, 119, 191, .5)',
+            data: [550, 1400, 1000, 2000, 1500, 1600, 800, 1700, 2000, 1000, 2500]
+        }]
+    },
     options: {
         animation: {
             duration: 0,
@@ -53,38 +83,48 @@ const config = {
     }
 }
 
-const buildtrafficChart = new Chart( trafficChart, config);
+const buildtrafficChart = new Chart(trafficChart, trafficConfig);
 
 trafficNav = document.querySelector('.traffic-nav');
 trafficNav.addEventListener('click', (e) => { 
-    // check if element is an li 
-    let text = e.target.innerHTML;
-    switch (text) {
-        case 'Hourly':
-            console.log(text);
+    if (e.target.tagName = 'li') {
+        let children = trafficNav.childNodes;
+        for (let i = 0; i < children.length; i++) {
+            if (children[i].tagName = 'li') {
+                children[i].className = '';
+            }
+        }
+        let text = e.target.innerHTML;
+        switch (text) {
+            case 'Hourly':
+                updateChart(buildtrafficChart, trafficDataHourly);
+                break;
+            case 'Daily':
+                updateChart(buildtrafficChart, trafficDataDaily);
+                break;
+            case 'Weekly':
+                updateChart(buildtrafficChart, trafficDataWeekly);
+                break;
+            case 'Monthly':
+                updateChart(buildtrafficChart, trafficDataMonthly);
+                break;
+            default: 
+                updateChart(buildtrafficChart, trafficDataHourly);
+                console.log('error');
             break;
-        case 'Daily':
-            console.log(text);
-            break;
-        case 'Weekly':
-            console.log(text);
-            break;
-        case 'Monthly':
-            console.log(text);
-            break;
-        default: 
-        break;
+        }
+        e.target.className = 'active';
     }
 });
 
 // DAILY
 
 const dailyLabels = [
-    'S', 
+    'Su', 
     'M', 
     'T', 
     'W', 
-    'T', 
+    'Th', 
     'F', 
     'S'
 ];
@@ -111,7 +151,7 @@ const dailyConfig = {
     }
 }
 
-const builddailyChart = new Chart( dailytrafficChart, dailyConfig);
+const buildDailyChart = new Chart(dailytrafficChart, dailyConfig);
 
 // Mobile
 const mobileLabels= [
