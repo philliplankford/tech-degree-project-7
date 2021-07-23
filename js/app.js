@@ -122,6 +122,15 @@ const user = document.getElementById('user-field');
 const message = document.getElementById('message-field');
 const send = document.getElementById('send');
 
+function checkUser(name, object) {
+    for (let i = 0; i < object.length; i++) {
+        if (name.toLowerCase() === object[i].name.toLowerCase()) {
+            return true;
+        }
+    }
+    return false; 
+}
+
 send.addEventListener('click', () => {
     if (user.value === "" && message.value === "") {
         alert("Please fill out user and message fields before sending.");
@@ -129,6 +138,8 @@ send.addEventListener('click', () => {
         alert("Please fill out user field before sending.");
     } else if (message.value === "") {
         alert("Please fill out message field before sending.");
+    } else if (!checkUser(user.value, members)) {
+        alert(`${user.value} does not exist`);
     } else {
         alert(`Message successfully sent to ${user.value}`);
         user.value = '';
