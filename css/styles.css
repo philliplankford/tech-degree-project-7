@@ -1339,6 +1339,36 @@ form button {
   color: #fff;
 }
 
+.dropdown {
+  position: relative;
+  display: block;
+  float: right;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  right: 0;
+  min-width: 160px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #7477bf;
+  color: #fff;
+}
+
+.show {
+  display: block;
+}
+
 .fb,
 .ig,
 .twitter {

@@ -11,10 +11,15 @@
             <header class="site-header">
                 <h1><strong>Web</strong>App&#8482;</h1>
                 <div class="header-right">
-                    <div>
+                    <div class="dropdown">
                         <img src="svgs/bell.svg" class="svg" id="bell" alt="bell">
+                        <div class="dropdown-content" id="notif-dropdown">
+                            <a href="#members">Send a message to Victoria</a>
+                            <a href="#members">Send a message to Dale</a>
+                        </div>
                         <div id="notifications"></div>
                     </div>
+                    <script src="js/dropdown.js"></script>
                     <hr class="vert-line">
                     <img src="images/member-1.jpg" class="profile-img" alt="a picture of a web member">
                     <p class="header-name">Student Name</p>
