@@ -12,6 +12,14 @@
         display: grid;
         grid-template-columns: 50%;
     }
+ 
+    .chart-full-container {
+        width: 80vw;
+    }
+
+    .chart-half-container {
+        width: 40vw;
+    }
 
     .dashboard-header,
     .alerts,
@@ -41,7 +49,7 @@
         justify-content: space-between;
         align-items: center;
         .profile-img {
-            margin-right: 10px;
+          margin-right: 10px;
         }
     }
 
@@ -82,12 +90,6 @@
     .toggle-wrapper {
         max-width: 50%;
     }
-
-    .daily-traffic,
-    .members,
-    .message-user {
-        border-right: 1px solid $col-form-borders;
-    }
 }
 
 @media (min-width: $desktop-break) {
@@ -97,11 +99,13 @@
     .message-user {
         grid-column: 1 / span 1;
     }
+
     .mobile-users,
     .activity,
     .settings {
         grid-column: 2 / span 1;
     }
+
     .toggle-wrapper {
         max-width: 75%;
     }

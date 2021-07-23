@@ -1303,8 +1303,13 @@ form button {
   margin-bottom: 10px;
 }
 
-.chart-half-container {
-  justify-self: center;
+.chart-half-container,
+.chart-full-container {
+  width: 90vw;
+}
+
+.chart-full-container {
+  margin: 0 auto;
 }
 
 #notifications {
@@ -1413,7 +1418,6 @@ body {
 .autocomplete {
   /*the container must be positioned relative:*/
   position: relative;
-  display: inline-block;
 }
 
 input {
@@ -1507,6 +1511,14 @@ input[type=submit] {
     grid-template-columns: 50%;
   }
 
+  .chart-full-container {
+    width: 80vw;
+  }
+
+  .chart-half-container {
+    width: 40vw;
+  }
+
   .dashboard-header,
 .alerts,
 .traffic,
@@ -1576,12 +1588,6 @@ input[type=submit] {
 
   .toggle-wrapper {
     max-width: 50%;
-  }
-
-  .daily-traffic,
-.members,
-.message-user {
-    border-right: 1px solid #ccc;
   }
 }
 @media (min-width: 1024px) {

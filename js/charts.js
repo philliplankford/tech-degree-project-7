@@ -144,6 +144,7 @@ const dailyConfig = {
     type: 'bar',
     data: dailyTraffic,
     options: {
+        aspectRatio: 1.9, 
         plugins: {
             legend: {
                 display: false,

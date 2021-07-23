@@ -226,8 +226,14 @@ form {
 
 }
 
-.chart-half-container {
-    justify-self: center;
+.chart-half-container,
+.chart-full-container {
+    // justify-self: center;
+    width: 90vw;
+}
+
+.chart-full-container {
+    margin: 0 auto;
 }
 
 #notifications {
