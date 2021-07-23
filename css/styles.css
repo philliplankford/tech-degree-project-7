@@ -361,6 +361,7 @@ a {
 .vert-line {
   background-color: #ccc;
   padding: 35px 1px 0 0;
+  border: none;
 }
 
 .members,
@@ -1092,15 +1093,30 @@ body {
   height: 100vh;
 }
 
-hr {
-  padding: 0.5px 0px;
-  background-color: #ccc;
-  border: none;
-  margin-bottom: 5px;
-}
-
 section {
   padding: 1rem;
+}
+
+#notifications {
+  position: relative;
+  right: -25px;
+  top: -30px;
+  background-color: #90ee90;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+}
+
+@keyframes ding {
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+#bell:hover {
+  animation: ding 1s linear infinite;
 }
 
 .traffic,
@@ -1310,20 +1326,6 @@ form button {
 
 .chart-full-container {
   margin: 0 auto;
-}
-
-#notifications {
-  position: relative;
-  right: -25px;
-  top: -30px;
-  background-color: #90ee90;
-  border-radius: 50%;
-  width: 5px;
-  height: 5px;
-}
-
-#bell:hover {
-  transform: rotate(10deg);
 }
 
 .traffic-nav {

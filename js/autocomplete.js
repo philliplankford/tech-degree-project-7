@@ -5,7 +5,7 @@ const names = [
     'Dan Oliver'
 ];
 
-// Credit to https://www.w3schools.com/howto/howto_js_autocomplete.asp 
+// adapted from https://www.w3schools.com/howto/howto_js_autocomplete.asp 
 
 function autocomplete(input, array) {
     let currentFocus; // which item is selected by arrow keys
@@ -24,8 +24,7 @@ function autocomplete(input, array) {
           if (array[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) { // check if item starts with same 
             let autoChoice = document.createElement("DIV"); //create an auto item
             autoChoice.innerHTML = `<strong>${array[i].substr(0, val.length)}</strong>${array[i].substr(val.length)}`; // bold matching display the rest
-            /*insert a input field that will hold the current array item's value:*/
-            autoChoice.innerHTML += `<input type='hidden' value='${array[i]}'>`; //"<input type='hidden' value='" + array[i] + "'>";
+            autoChoice.innerHTML += `<input type='hidden' value='${array[i]}'>`; // makes a hidden input that will store the array val
             autoChoice.addEventListener("click", function() { // when an auto div is clicked
                 input.value = this.getElementsByTagName("input")[0].value; // insert auto value
                 closeAllLists();
@@ -53,19 +52,15 @@ function autocomplete(input, array) {
         }
     });
     
-    function addActive(x) {
-        /*a function to classify an item as "active":*/
+    function addActive(x) { // make an item 'active' by giving it the active class
         if (!x) return false;
-        /*start by removing the "active" class on all items:*/
-        removeActive(x);
+        removeActive(x); // remove the class from all items
         if (currentFocus >= x.length) currentFocus = 0;
         if (currentFocus < 0) currentFocus = (x.length - 1);
-        /*add class "autocomplete-active":*/
         x[currentFocus].classList.add("autocomplete-active");
       }
 
-      function removeActive(x) {
-        /*a function to remove the "active" class from all autocomplete items:*/
+      function removeActive(x) { // remove the active class from all autocomplete items
         for (var i = 0; i < x.length; i++) {
           x[i].classList.remove("autocomplete-active");
         }

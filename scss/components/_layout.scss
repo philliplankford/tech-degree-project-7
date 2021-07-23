@@ -9,15 +9,32 @@ body {
     height: 100vh;
 }
 
-hr {
-    padding: .5px 0px;
-    background-color: $col-form-borders;
-    border: none;
-    margin-bottom: 5px;
-}
-
 section { 
     padding: 1rem;
+}
+
+
+#notifications {
+    position: relative;
+    right: -25px; 
+    top: -30px; 
+    background-color: $col-highlight;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+}
+
+@keyframes ding { 
+    25% {
+        transform: rotate(10deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+}
+
+#bell:hover {
+    animation: ding 1s linear infinite;
 }
 
 .traffic,
@@ -228,24 +245,9 @@ form {
 
 .chart-half-container,
 .chart-full-container {
-    // justify-self: center;
     width: 90vw;
 }
 
 .chart-full-container {
     margin: 0 auto;
-}
-
-#notifications {
-    position: relative;
-    right: -25px; 
-    top: -30px; 
-    background-color: $col-highlight;
-    border-radius: 50%;
-    width: 5px;
-    height: 5px;
-}
-
-#bell:hover {
-    transform: rotate(10deg);
 }
