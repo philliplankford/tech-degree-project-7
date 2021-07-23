@@ -75,7 +75,7 @@ function insertMemberActivityData( array, section, className ) {
                     </div>
                 </div>
                 <p>${members[i].dateJoined}</p>
-            </div>`
+            </div>`;
         } else if ( array === recentActivity) {
             inner =     `   
                 <div class="flex-container"> 
@@ -87,8 +87,8 @@ function insertMemberActivityData( array, section, className ) {
                     </div>
                 </div>
                 <a class="carrot">></a>
-            </div>`
-        } else {};
+            </div>`;
+        } else {}
         let newElement = document.createElement('div');
         newElement.className = className;
         newElement.innerHTML = inner;
@@ -108,7 +108,7 @@ alertBanner.innerHTML =
         <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete </p>
         <p class="alert-banner-close">x</p>
     </div>
-    `
+    `;
     
 alertBanner.addEventListener('click', e => {
     const element = e.target; 
@@ -124,17 +124,17 @@ const send = document.getElementById('send');
 
 send.addEventListener('click', () => {
     if (user.value === "" && message.value === "") {
-        alert("Please fill out user and message fields before sending.")
+        alert("Please fill out user and message fields before sending.");
     } else if (user.value === "") {
-        alert("Please fill out user field before sending.")
+        alert("Please fill out user field before sending.");
     } else if (message.value === "") {
-        alert("Please fill out message field before sending.")
+        alert("Please fill out message field before sending.");
     } else {
         alert(`Message successfully sent to ${user.value}`);
         user.value = '';
         message.value = '';
     }
-})
+});
 
 // SAVING
 const email = document.getElementById('email-check');
@@ -147,7 +147,7 @@ save.addEventListener('click', () => {
     localStorage.setItem('email-status', email.checked);
     localStorage.setItem('public-status', public.checked);
     localStorage.setItem('timezone-status', timezone.value);
-})
+});
 
 cancel.addEventListener('click', () => {
     localStorage.removeItem('email-status');
@@ -156,7 +156,7 @@ cancel.addEventListener('click', () => {
     email.checked = false; 
     public.checked = false; 
     timezone.value = 'Select a Timezone';
-})
+});
 
 function checkItem( key, element ) {
     if (localStorage.getItem(key) === 'true') {
@@ -172,39 +172,3 @@ checkItem( 'public-status', public );
 if (localStorage.getItem('timezone-status')) {
     timezone.value = localStorage.getItem('timezone-status');
 }
-
-/*
-for (let i = 0; i < members.length; i++) {
-    let newMember = document.createElement('div');
-    newMember.className = "new-member-container";
-    newMember.innerHTML = `
-        <div class="flex-container">
-            <div class="members-text">
-                <img src=${members[i].profilePicture} class="profile-img" alt="a picture of a web member">
-                <div class="inner-text">
-                    <p>${members[i].name}</p>
-                    <a href="#">${members[i].email}</a>
-                </div>
-            </div>
-            <p>${members[i].dateJoined}</p>
-        </div>`
-    membersSection.appendChild(newMember);
-}
-
-for (let i = 0; i < recentActivity.length; i++) {
-    let newActivity = document.createElement('div');
-    newActivity.className = "recent-activity-container";
-    newActivity.innerHTML = 
-    `   <div class="flex-container"> 
-            <div class="members-text">   
-                <img src=${recentActivity[i].profilePicture} class="profile-img" alt="a picture of a web member">
-                <div class="inner-text">
-                    <p>${recentActivity[i].name} ${recentActivity[i].activity} <strong>${recentActivity[i].post}</strong></p>
-                    <p>${recentActivity[i].when}</p>
-                </div>
-            </div>
-            <a class="carrot">></a>
-        </div>`
-    activitySection.appendChild(newActivity);
-}
-*/

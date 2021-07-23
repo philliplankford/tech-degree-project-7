@@ -3,12 +3,16 @@
     text-decoration: none;
     list-style: none;
     justify-content: center;
-    & li {
+    li {
         color: black;
         background-color: $col-white;
         border-radius: 90px/90px;
         margin-right: 10px;
         padding: 6px;
+        &:hover {
+            background-color: $col-highlight;
+            color: $col-white;
+        }
     }
     .active {
         background-color: $col-highlight;

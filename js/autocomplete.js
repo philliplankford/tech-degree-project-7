@@ -3,7 +3,7 @@ const names = [
     'Dale Byrd',
     'Dawn Wood',
     'Dan Oliver'
-]
+];
 
 // Credit to https://www.w3schools.com/howto/howto_js_autocomplete.asp 
 
@@ -25,8 +25,8 @@ function autocomplete(input, array) {
             let autoChoice = document.createElement("DIV"); //create an auto item
             autoChoice.innerHTML = `<strong>${array[i].substr(0, val.length)}</strong>${array[i].substr(val.length)}`; // bold matching display the rest
             /*insert a input field that will hold the current array item's value:*/
-            autoChoice.innerHTML += `<input type='hidden' value='${array[i]}'>` //"<input type='hidden' value='" + array[i] + "'>";
-            autoChoice.addEventListener("click", function(e) { // when an auto div is clicked
+            autoChoice.innerHTML += `<input type='hidden' value='${array[i]}'>`; //"<input type='hidden' value='" + array[i] + "'>";
+            autoChoice.addEventListener("click", function() { // when an auto div is clicked
                 input.value = this.getElementsByTagName("input")[0].value; // insert auto value
                 closeAllLists();
             });
@@ -48,7 +48,7 @@ function autocomplete(input, array) {
         } else if (e.keyCode == 13) { // 13 refers to enter
             e.preventDefault();
             if (currentFocus > -1) {
-                if (x) { x[currentFocus].click(); };
+                if (x) { x[currentFocus].click(); }
             }
         }
     });

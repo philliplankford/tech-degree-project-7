@@ -7,7 +7,7 @@ function toggleShow(element) {
 
 bell.addEventListener('click', () => {
     toggleShow(notifDropdown);
-})
+});
 
 window.onclick = (e) => {
     if (!e.target.matches('#bell')) {
@@ -15,7 +15,7 @@ window.onclick = (e) => {
                 notifDropdown.classList.remove('show');
             }
     }
-}
+};
 
 
 

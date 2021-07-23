@@ -1339,6 +1339,10 @@ form button {
   margin-right: 10px;
   padding: 6px;
 }
+.traffic-nav li:hover {
+  background-color: #90ee90;
+  color: #fff;
+}
 .traffic-nav .active {
   background-color: #90ee90;
   color: #fff;

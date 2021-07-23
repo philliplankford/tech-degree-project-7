@@ -78,11 +78,11 @@ const trafficConfig = {
         elements: {
             line: {
                 fill: true,
-                tension: .2,
+                tension: 0.2,
             }
         }
     }
-}
+};
 
 const buildtrafficChart = new Chart(trafficChart, trafficConfig);
 
@@ -111,8 +111,7 @@ trafficNav.addEventListener('click', (e) => {
                 updateChart(buildtrafficChart, trafficDataMonthly);
                 break;
             default: 
-                return;
-            break;
+                break;
         }
         console.log(e.target);
         e.target.className = 'active';
@@ -152,7 +151,7 @@ const dailyConfig = {
             }
         }
     }
-}
+};
 
 const buildDailyChart = new Chart(dailytrafficChart, dailyConfig);
 
@@ -187,6 +186,6 @@ const mobileConfig = {
             }
         }
     }
-}
+};
 
 const buildmobileChart = new Chart( mobileChart, mobileConfig);
