@@ -60,7 +60,7 @@ const trafficConfig = {
         }]
     },
     options: {
-        aspectRatio: 2.5,
+        aspectRatio: 2,
         animation: {
             duration: 0,
         },
