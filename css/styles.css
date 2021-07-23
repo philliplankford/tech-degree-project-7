@@ -1496,11 +1496,6 @@ input[type=submit] {
 
 */
 @media (min-width: 768px) {
-  /*
-  .main-grid {
-      grid-template-rows: 70px 75px 1fr;
-  }
-  */
   .main-grid {
     grid-template-columns: 80px 1fr;
     grid-template-rows: 60px 1fr;

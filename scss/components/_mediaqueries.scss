@@ -1,9 +1,5 @@
 @media (min-width: $tablet-break) {
-    /*
-    .main-grid {
-        grid-template-rows: 70px 75px 1fr;
-    }
-    */
+
     .main-grid {
         grid-template-columns: 80px 1fr;
         grid-template-rows: 60px 1fr;
@@ -35,17 +31,11 @@
         grid-column: 2 / span 1;
     }
 
-    // section { //, .dashboard-header 
-    //     max-width: 100%;
-    //     margin: 0 10px;
-    // }
-
     .traffic-header {
         display: flex; 
         justify-content: space-between;
     }
     
-
     .flex-container {
         display: flex; 
         justify-content: space-between;
@@ -101,12 +91,6 @@
 }
 
 @media (min-width: $desktop-break) {
-    // .dashboard-header,
-    // .alerts,
-    // .traffic,
-    // .social-stats {
-    //     grid-column: 1 / span 2;
-    // }
 
     .daily-traffic,
     .members,
